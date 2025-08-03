@@ -1,0 +1,37 @@
+# Maven build directories
+target/
+!target/*.jar
+
+# Git related files
+.git
+.gitignore
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+*.sublime*
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Temp files
+tmp/
+temp/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Docker related
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Test files
+**/test/
+**/tests/
+**/src/test/
