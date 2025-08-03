@@ -8,10 +8,6 @@ WORKDIR /app
 # Copy the pom.xml file to download dependencies
 COPY pom.xml .
 
-# Copy the Maven wrapper files
-COPY .mvn/ .mvn
-COPY mvnw .
-
 # Download all the dependencies from pom.xml
 # This step is cached, so it only runs again if your dependencies change.
 RUN mvn dependency:go-offline
@@ -35,7 +31,7 @@ WORKDIR /app
 COPY --from=build /app/target/job-portal-backend-1.0.0.jar app.jar
 
 # Expose the port that your Spring Boot application runs on (usually 8080)
-EXPOSE 8080
+EXPOSE 8081
 
 # The command to run your application when the container starts
 ENTRYPOINT ["java", "-jar", "app.jar"]
